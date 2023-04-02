@@ -48,7 +48,7 @@ gptAiModel = GPTModel(destinationDirectory)
 # gptAiModel.construct_index()
 
 def ask_ai():
-    index = GPTSimpleVectorIndex.load_from_disk('index.json')
+    index = GPTSimpleVectorIndex.load_from_disk('gptModel.json')
     while True: 
         query = input("What do you want to ask? ")
         response = index.query(query, response_mode="compact")
