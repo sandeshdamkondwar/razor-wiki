@@ -46,12 +46,12 @@ destinationDirectory = saveRazorpayDoscFileInCurrentDirectory(razorpayDoscDirect
 gptAiModel = GPTModel(destinationDirectory)
 
 # gptAiModel.construct_index()
-
+    
+index = GPTSimpleVectorIndex.load_from_disk('gptModel.json')
 def ask_ai():
-    index = GPTSimpleVectorIndex.load_from_disk('index.json')
     while True: 
         query = input("What do you want to ask? ")
         response = index.query(query, response_mode="compact")
         print(response.response)
 
-# ask_ai()
+ask_ai()
