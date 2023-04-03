@@ -1,6 +1,5 @@
 from flask import Flask,make_response,jsonify
 from llama_index import GPTSimpleVectorIndex
-from queryResolver import ask_ai
 
 index = GPTSimpleVectorIndex.load_from_disk('gptModel.json')
 
